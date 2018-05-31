@@ -12,6 +12,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'prettier/prettier': 'error'
   },
+  plugins: ['vue'],
   parserOptions: {
     parser: 'babel-eslint'
   }
