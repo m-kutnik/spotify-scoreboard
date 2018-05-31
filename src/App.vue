@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import '@/assets/global.scss'
-import '@/assets/normalize.scss'
+import "@/assets/global.scss"
+import "@/assets/normalize.scss"
 
 export default {
-  name: 'App',
+  name: "App",
 }
 </script>
 
