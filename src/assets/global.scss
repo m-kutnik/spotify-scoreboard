@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Roboto');
+
+body {
+  background: #191414;
+  color: #EEE;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+.btn {
+  border: 2px solid darken(#1ED760, 10%);
+  padding: 0.7em 1em;
+  text-align: center;
+  display: inline-block;
+  border-radius: 5000px;
+  color: #EEE;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  font-family: 'Fira Sans', sans-serif;
+  background: #1ED760;
+  text-transform: uppercase;
+  outline:none;
+  &:hover {
+    background: darken(#1ED760, 5%);
+    box-shadow: 3px 0 20px rgba(24, 170, 76, 0.7);
+  }
+}
