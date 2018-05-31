@@ -28,6 +28,7 @@ class SpotifyApiInstance {
   }
 
   getTrackList(user, playlist, count) {
+    // eslint-disable-next-line prettier/prettier
     const promiseArray = [];
     [...Array(count).keys()].forEach((i) => {
       const promise = this.spotify.get(`/v1/users/${user}/playlists/${playlist}/tracks?offset=${i * 100}&limit=100`)
