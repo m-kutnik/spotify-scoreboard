@@ -13,7 +13,7 @@
           target="_blank"
           title="Open on Spotify">
           <img
-            src="http://icons.iconarchive.com/icons/xenatt/the-circle/48/App-Spotify-icon.png"
+            src="https://i.imgur.com/57bY4IR.png"
             class="link">
         </a>
         <h4>{{ upperFirst(user.user) }}</h4>
