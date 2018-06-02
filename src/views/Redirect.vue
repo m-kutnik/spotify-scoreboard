@@ -14,13 +14,16 @@ export default {
     const params = this.getHashParams()
     localStorage.setItem("access_token", params.access_token)
     localStorage.setItem("state", params.state)
-    window.location = `${window.location.origin}/dashboard`
+    window.location =
+      window.location.origin === "https://m-kutnik.github.io"
+        ? `${window.location.origin}/spotify-scoreboard/#/dashboard`
+        : `${window.location.origin}/#/dashboard`
   },
   methods: {
     getHashParams() {
       const hashParams = {}
       const r = /([^&;=]+)=?([^&;]*)/g
-      const q = this.$route.hash.substring(1)
+      const q = this.$route.path.substring(1)
       let e
 
       // eslint-disable-next-line
