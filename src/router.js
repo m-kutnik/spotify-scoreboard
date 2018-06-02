@@ -1,9 +1,9 @@
 import Vue from "vue"
 import Router from "vue-router"
 import Spotify from "@/api/spotify"
-import Home from "@/views/Home"
-import Dashboard from "@/views/Dashboard"
-import Redirect from "@/views/Redirect"
+const Home = () => import("@/views/Home")
+const Redirect = () => import("@/views/Redirect")
+const Dashboard = () => import("@/views/Dashboard")
 
 Vue.use(Router)
 
@@ -24,7 +24,8 @@ const authUser = function authUser(next) {
 }
 
 export default new Router({
-  mode: "history",
+  // base: "/sptf/",
+  // mode: "history",
   routes: [
     {
       path: "/",
@@ -40,9 +41,13 @@ export default new Router({
       },
     },
     {
-      path: "/redirect",
+      path: "*",
       name: "Redirect",
       component: Redirect,
     },
   ],
+  scrollBehavior(to, from, saved) {
+    if (saved) return saved
+    else return { x: 0, y: 0 }
+  },
 })
