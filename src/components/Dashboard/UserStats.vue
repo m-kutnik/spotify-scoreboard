@@ -1,37 +1,39 @@
 <template>
   <div v-if="isActive">
-    <div
-      v-for="(user, key) in users"
-      :key="key">
-      <h2>Overview: {{ upperFirst(user.user) }}</h2>
-      <div class="card">
-        <img
-          :src="getAvatar(user)"
-          class="avatar">
-        <a
-          :href="user.extra.external_urls.spotify"
-          target="_blank"
-          title="Open on Spotify">
+    <h2>Overview</h2>
+    <div class="overview-container">
+      <div
+        v-for="(user, key) in users"
+        :key="key"> 
+        <div class="card">
           <img
-            src="https://i.imgur.com/57bY4IR.png"
-            class="link">
-        </a>
-        <h4>{{ upperFirst(user.user) }}</h4>
-        <div class="stats">
-          <ul class="info">
-            <li>
-              <span>Tracks</span><span class="right">{{ user.tracks.length }}</span>
-            </li>
-            <li>
-              <span>Followers</span><span class="right">{{ user.extra.followers.total }}</span>
-            </li>
-            <li>
-              <span>Duration</span><span class="right">{{ getTracksTime(user.tracks) }}</span>
-            </li>
-            <li>
-              <span>Popularity</span><span class="right">{{ getMeanPopularity(user.tracks) }}</span>
-            </li>
-          </ul>
+            :src="getAvatar(user)"
+            class="avatar">
+          <a
+            :href="user.extra.external_urls.spotify"
+            target="_blank"
+            title="Open on Spotify">
+            <img
+              src="https://i.imgur.com/57bY4IR.png"
+              class="link">
+          </a>
+          <h4>{{ upperFirst(user.user) }}</h4>
+          <div class="stats">
+            <ul class="info">
+              <li>
+                <span>Tracks</span><span class="right">{{ user.tracks.length }}</span>
+              </li>
+              <li>
+                <span>Followers</span><span class="right">{{ user.extra.followers.total }}</span>
+              </li>
+              <li>
+                <span>Duration</span><span class="right">{{ getTracksTime(user.tracks) }}</span>
+              </li>
+              <li>
+                <span>Popularity</span><span class="right">{{ getMeanPopularity(user.tracks) }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -177,5 +179,15 @@ img.link {
   position: absolute;
   top: 85px;
   right: 100px;
+}
+
+.overview-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.overview-container > div {
+  margin: 10px 15px;
 }
 </style>
