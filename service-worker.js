@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.2.0/workbox-sw.js");
 
 importScripts(
-  "./precache-manifest.cba66e4acac93d4044529271ab7a6494.js"
+  "./precache-manifest.c1aac82aa9a3d1d8855054549758d98f.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "spotify-scoreboard"});
